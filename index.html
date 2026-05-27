@@ -925,6 +925,281 @@
                 font-size: 72px;
             }
         }
+        /* =========================================================
+   FULL MOBILE RESPONSIVE FIX
+========================================================= */
+
+/* TABLET */
+@media (max-width: 1024px) {
+
+    section {
+        padding: 90px 30px;
+    }
+
+    nav {
+        padding: 18px 25px;
+    }
+
+    nav.scrolled {
+        padding: 14px 25px;
+    }
+
+    .hero-title {
+        font-size: clamp(60px, 10vw, 120px);
+    }
+
+    .hero-sub {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .hero-sub p {
+        max-width: 100%;
+    }
+
+    .skills-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .project-row {
+        grid-template-columns: 1fr;
+        gap: 15px;
+        height: auto;
+        padding: 28px;
+    }
+
+    .pr-tags {
+        justify-content: flex-start;
+        flex-wrap: wrap;
+    }
+
+    #contact {
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
+
+    .code-cloud {
+        display: none;
+    }
+}
+
+
+/* MOBILE */
+@media (max-width: 768px) {
+
+    html,
+    body {
+        overflow-x: hidden;
+    }
+
+    body {
+        cursor: auto;
+    }
+
+    nav {
+        padding: 16px 18px;
+    }
+
+    nav.scrolled {
+        padding: 12px 18px;
+    }
+
+    nav ul {
+        display: none;
+    }
+
+    .logo {
+        font-size: 24px;
+    }
+
+    section {
+        padding: 80px 18px;
+    }
+
+    #home {
+        padding-top: 140px;
+        min-height: auto;
+    }
+
+    .hero-eyebrow {
+        margin-bottom: 20px;
+    }
+
+    .hero-title {
+        font-size: 58px;
+        line-height: .95;
+    }
+
+    .hero-sub {
+        margin-top: 30px;
+        gap: 24px;
+    }
+
+    .hero-sub p {
+        font-size: 14px;
+        line-height: 1.9;
+    }
+
+    .hero-sub-cta {
+        width: 100%;
+    }
+
+    .btn-main,
+    .btn-ghost {
+        width: 100%;
+        justify-content: center;
+        padding: 15px 20px;
+    }
+
+    .scroll-hint {
+        display: none;
+    }
+
+    .s-title {
+        font-size: 48px;
+        line-height: 1;
+    }
+
+    .section-head {
+        margin-bottom: 40px;
+    }
+
+    .skills-grid {
+        grid-template-columns: 1fr;
+        gap: 14px;
+    }
+
+    .skill-card {
+        padding: 35px 20px;
+    }
+
+    .skill-card i {
+        font-size: 34px;
+    }
+
+    .project-row {
+        padding: 22px;
+    }
+
+    .pr-num {
+        font-size: 28px;
+    }
+
+    .pr-name {
+        font-size: 20px;
+    }
+
+    .pr-desc {
+        display: block;
+        font-size: 13px;
+        line-height: 1.7;
+    }
+
+    .pr-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+
+    .about > div:last-child {
+        grid-template-columns: 1fr !important;
+        gap: 40px !important;
+    }
+
+    #stats {
+        padding: 80px 18px !important;
+    }
+
+    #stats .skills-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    #contact {
+        padding: 80px 18px;
+    }
+
+    .contact-left h2 {
+        font-size: 62px;
+    }
+
+    .contact-form {
+        padding: 28px 20px;
+    }
+
+    footer {
+        padding: 20px 18px;
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
+
+    .footer-logo {
+        font-size: 20px;
+    }
+
+    .marquee-track span {
+        font-size: 16px;
+    }
+
+    .loader-logo {
+        font-size: 70px;
+        letter-spacing: 5px;
+    }
+
+    .loader-bar-wrap {
+        width: 180px;
+    }
+
+    #cursorCanvas {
+        display: none;
+    }
+
+    .code-cloud {
+        display: none;
+    }
+
+    #code-rain {
+        opacity: 0.08;
+    }
+}
+
+
+/* SMALL MOBILE */
+@media (max-width: 480px) {
+
+    .hero-title {
+        font-size: 46px;
+    }
+
+    .s-title {
+        font-size: 38px;
+    }
+
+    .contact-left h2 {
+        font-size: 48px;
+    }
+
+    .btn-main,
+    .btn-ghost {
+        font-size: 12px;
+    }
+
+    .project-row {
+        padding: 18px;
+    }
+
+    .pr-name {
+        font-size: 18px;
+    }
+
+    #stats .skills-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .loader-logo {
+        font-size: 56px;
+    }
+}
     </style>
 </head>
 <body>
