@@ -1598,7 +1598,7 @@ z-index:2;
 
         /* Safety fallback — if ScrollTrigger never fires, make everything visible after 2s */
         setTimeout(() => {
-            document.querySelectorAll('.skill-card,.project-row,.s-title,.contact-left,.contact-form').forEach(el => {
+            document.querySelectorAll('.skill-card,.project-row,.contact-left,.contact-form').forEach(el => {
                 if (getComputedStyle(el).opacity === '0') {
                     el.style.opacity = '1';
                     el.style.transform = 'none';
