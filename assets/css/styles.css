@@ -1059,6 +1059,10 @@ footer p {
     .hero-title {
         font-size: 72px;
     }
+    
+    #developers{
+        display:block;
+    }
 }
 /* =========================================================
    ULL MOBILE RESPONSIVE FIX
@@ -1263,6 +1267,9 @@ footer p {
 
     .developer-top h3{
         font-size:22px;
+    } 
+     #developers{
+        display:block;
     }
 
 }
@@ -1292,5 +1299,8 @@ footer p {
     }
     .loader-logo {
         font-size: 56px;
+    }
+      #developers{
+        display:block;
     }
 }
