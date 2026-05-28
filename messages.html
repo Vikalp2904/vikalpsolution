@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+    <title>VIKALP — Contact Messages</title>
+
+    <!-- Fonts -->
+    <link rel="stylesheet" href="assets/css/fonts.css">
+    <link rel="stylesheet" href="assets/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/message.css">
+</head>
+
+<body>
+
+    <!-- MATRIX -->
+    <canvas id="code-rain"></canvas>
+
+    <div class="page">
+
+        <!-- TOPBAR -->
+        <div class="topbar">
+
+            <div class="logo">
+                VI<span>K</span>ALP.
+            </div>
+
+            <a href="index.html" class="back-btn">
+                <i class="fa-solid fa-arrow-left"></i>
+                Back To Website
+            </a>
+
+        </div>
+
+        <!-- HERO -->
+        <section class="hero">
+
+            <div class="tag">
+                Contact Dashboard
+            </div>
+
+            <h1 class="title">
+                CLIENT <span>MESSAGES</span>
+            </h1>
+
+            <p class="subtitle">
+                Realtime contact submissions from your portfolio website.
+                All messages are synced directly from Firebase and displayed
+                inside a futuristic enterprise-style dashboard interface.
+            </p>
+
+        </section>
+
+        <!-- CONTACTS -->
+        <div id="contactsContainer">
+
+            <!-- SAMPLE CARD -->
+
+            <div class="msg-card">
+
+                <div class="msg-head">
+
+                    <div>
+                        <h3>John Doe</h3>
+                        <div class="email">
+                            john@example.com
+                        </div>
+                    </div>
+
+                    <div class="icon">
+                        <i class="fa-solid fa-envelope"></i>
+                    </div>
+
+                </div>
+
+                <div class="message">
+                    Hello, I would like to discuss a custom ERP system
+                    for our healthcare organization.
+                </div>
+
+                <div class="date">
+                    28 MAY 2026 · 10:42 PM
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <script type="module" src="assets/js/firebase.js"></script>
+    <script type="module" src="assets/js/message.js"></script>
+
+</body>
+</html>
