@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VIKALP — Full Stack Developer</title>
+    <link rel="stylesheet" href="assets/css/fonts.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/all.min.css">
+</head>
+
+<body>
+    <canvas id="cursorCanvas"></canvas>
+    <!-- LOADER -->
+    <div id="loader">
+        <div class="loader-logo" id="loaderLogo">VIKALP</div>
+        <div class="loader-bar-wrap">
+            <div class="loader-bar" id="loaderBar"></div>
+        </div>
+        <div class="loader-pct" id="loaderPct">0%</div>
+    </div>
+
+    <!-- NAV -->
+    <nav id="nav">
+        <div class="logo">VI<span>K</span>ALP.</div>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- HERO -->
+    <section id="home">
+        <!-- CODE RAIN LAYER -->
+        <canvas id="code-rain"></canvas>
+
+        <!-- FLOATING CODE CARDS -->
+        <div class="code-cloud" id="codeCloud"></div>
+        <div class="hero-eyebrow" id="eyebrow">
+            <div class="hero-line"></div>
+            <span>VIKALP · DRM / HMS /CAMP</span>
+        </div>
+
+        <div class="hero-title">
+            <div class="word"><span>DATA</span></div>
+            <div class="word gradient-word"><span>RESOURCE</span></div>
+            <div class="word"><span>MANAGEMENT.</span></div>
+        </div>
+
+        <div class="hero-sub">
+            <p id="heroP">
+                We build scalable healthcare & enterprise software solutions including Hospital OPD systems, Health Camp
+                management platforms, and fully custom dynamic business applications tailored for any industry.
+            </p>
+            <div class="hero-sub-cta" id="heroCta">
+                <a href="#projects" class="btn-main"><span>View Work</span> <i class="fa-solid fa-arrow-right"></i></a>
+                <a href="#contact" class="btn-ghost"><span>Contact Me</span></a>
+            </div>
+        </div>
+
+        <div class="scroll-hint" id="scrollHint">
+            <div class="scroll-hint-line"></div>
+            <span>Scroll</span>
+        </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="about">
+        <div class="section-head">
+            <div class="s-tag">System Architecture</div>
+            <h2 class="s-title">
+                SOFTWARE ENGINEERED<br>
+                FOR REAL OPERATIONS
+            </h2>
+        </div>
+        <div style="
+    display:grid;
+    grid-template-columns:1.2fr .8fr;
+    gap:80px;
+    align-items:center;
+    ">
+
+            <div>
+                <p style="
+            color:var(--muted);
+            line-height:2.1;
+            font-size:15px;
+            max-width:720px;
+            ">
+                    We design and engineer enterprise ecosystems that streamline
+                    hospital operations, healthcare workflows, and organizational management.
+
+                    <br><br>
+
+                    Our systems combine scalable backend architecture,
+                    real-time processing, API integrations, intelligent reporting,
+                    and modern UI engineering to deliver production-grade platforms
+                    built for reliability and performance.
+
+                    <br><br>
+
+                    From OPD automation and patient lifecycle management
+                    to ERP infrastructure and custom business software —
+                    every solution is tailored for operational efficiency at scale.
+                </p>
+            </div>
+
+            <div class="skills-grid" style="
+        grid-template-columns:1fr 1fr;
+        gap:14px;
+        ">
+
+                <div class="skill-card">
+                    <i class="fa-solid fa-server"></i>
+                    <h3>Realtime Systems</h3>
+                </div>
+
+                <div class="skill-card">
+                    <i class="fa-solid fa-database"></i>
+                    <h3>ERP Infrastructure</h3>
+                </div>
+
+                <div class="skill-card">
+                    <i class="fa-solid fa-cloud"></i>
+                    <h3>Cloud Architecture</h3>
+                </div>
+
+                <div class="skill-card">
+                    <i class="fa-solid fa-shield-halved"></i>
+                    <h3>Secure Platforms</h3>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <!-- MARQUEE -->
+    <div class="marquee-wrap" style="position:relative;z-index:2;">
+        <div class="marquee-track" id="mtrack"></div>
+    </div>
+
+    <!-- SKILLS -->
+    <section id="skills">
+        <div class="section-head">
+            <div class="s-tag">Our Expertise</div>
+            <h2 class="s-title">HEALTHCARE &amp;<br> ENTERPRISE SOLUTIONS</h2>
+            <p style="color:var(--muted); max-width:500px; margin-top:10px;">
+                Hospital management, OPD systems, health camps, and scalable ERP solutions built for real-world business
+                needs.
+            </p>
+        </div>
+        <div class="skills-grid">
+            <div class="skill-card">
+                <i class="fa-solid fa-hospital"></i>
+                <h3>Hospital ERP</h3>
+            </div>
+
+            <div class="skill-card">
+                <i class="fa-solid fa-user-doctor"></i>
+                <h3>OPD Automation</h3>
+            </div>
+
+            <div class="skill-card">
+                <i class="fa-solid fa-layer-group"></i>
+                <h3>Multi-Module ERP</h3>
+            </div>
+
+            <div class="skill-card">
+                <i class="fa-solid fa-cloud"></i>
+                <h3>Cloud Platforms</h3>
+            </div>
+
+            <div class="skill-card">
+                <i class="fa-solid fa-code"></i>
+                <h3>Custom Software</h3>
+            </div>
+
+            <div class="skill-card">
+                <i class="fa-solid fa-network-wired"></i>
+                <h3>API Integrations</h3>
+            </div>
+        </div>
+    </section>
+
+    <!-- STATS -->
+    <section id="stats" style="
+background:#04050c;
+min-height:auto;
+padding:120px 70px;
+position:relative;
+z-index:2;
+">
+
+        <div class="skills-grid">
+
+            <div class="skill-card">
+                <h2 style="font-size:52px;font-family:'Bebas Neue';color:var(--cyan);">
+                    10+
+                </h2>
+                <h3>Enterprise Systems</h3>
+            </div>
+
+            <div class="skill-card">
+                <h2 style="font-size:52px;font-family:'Bebas Neue';color:var(--cyan);">
+                    100K+
+                </h2>
+                <h3>Patient Records</h3>
+            </div>
+
+            <div class="skill-card">
+                <h2 style="font-size:52px;font-family:'Bebas Neue';color:var(--cyan);">
+                    24/7
+                </h2>
+                <h3>Operational Reliability</h3>
+            </div>
+
+            <div class="skill-card">
+                <h2 style="font-size:52px;font-family:'Bebas Neue';color:var(--cyan);">
+                    99.9%
+                </h2>
+                <h3>System Stability</h3>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects">
+        <div class="section-head">
+            <div class="s-tag">Case Studies</div>
+            <h2 class="s-title">
+                ENTERPRISE SYSTEMS<br />
+                IN PRODUCTION
+            </h2>
+            <p style="color:var(--muted); max-width:520px; margin-top:10px;">
+                Enterprise-grade applications delivered for healthcare and business automation including OPD, camps, and
+                ERP platforms.
+            </p>
+        </div>
+        <div class="projects-container">
+            <div class="project-row">
+                <div class="pr-num">01</div>
+                <div class="pr-name">Hospital OPD System</div>
+                <div class="pr-desc">
+                    Intelligent outpatient management ecosystem with appointment orchestration,billing workflows,
+                    patient lifecycle tracking, and clinical reporting.
+                </div>
+                <div class="pr-tags"><span class="pr-tag">ASP.NET</span><span class="pr-tag">SQL</span><span
+                        class="pr-tag">ERP</span></div>
+            </div>
+
+            <div class="project-row">
+                <div class="pr-num">02</div>
+                <div class="pr-name">Health Camp Management</div>
+                <div class="pr-desc">
+                    Large-scale healthcare camp infrastructure enabling realtime registration,screening workflows,
+                    analytics, and operational coordination.
+                </div>
+                <div class="pr-tags"><span class="pr-tag">Web App</span><span class="pr-tag">Realtime</span><span
+                        class="pr-tag">Cloud</span></div>
+            </div>
+
+            <div class="project-row">
+                <div class="pr-num">03</div>
+                <div class="pr-name">Custom ERP Solutions</div>
+                <div class="pr-desc">
+                    Modular enterprise ERP architecture integrating inventory, finance, HR operations, reporting
+                    systems, and automation pipelines..
+                </div>
+                <div class="pr-tags"><span class="pr-tag">ERP</span><span class="pr-tag">Angular</span><span
+                        class="pr-tag">API</span></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+        <div class="contact-left">
+            <div class="s-tag">Get In Touch</div>
+            <h2>LET’S<br>BUILD<br><em>YOUR SYSTEM</em></h2>
+            <p>
+                We deliver end-to-end software solutions for hospitals, clinics, health camps, and businesses. From
+                requirement to deployment — fully custom development.
+            </p>
+            <div class="contact-socials">
+                <a href="#" class="cs-link"><i class="fa-brands fa-github"></i></a>
+                <a href="#" class="cs-link"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="#" class="cs-link"><i class="fa-solid fa-envelope"></i></a>
+                <a href="#" class="cs-link"><i class="fa-brands fa-twitter"></i></a>
+            </div>
+        </div>
+        <div class="contact-form">
+            <h3>Send a Message</h3>
+            <div class="fg"><label>Name</label><input type="text" placeholder="Your name"></div>
+            <div class="fg"><label>Email</label><input type="email" placeholder="your@email.com"></div>
+            <div class="fg"><label>Message</label><textarea placeholder="Tell me about your project..."></textarea>
+            </div>
+            <a href="#" class="btn-main" style="margin-top:8px"><span>Send Message</span><i
+                    class="fa-solid fa-paper-plane"></i></a>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>© 2026 VIKALP — Built with passion &amp; precision.</p>
+        <div class="footer-logo">VI<span>K</span>ALP.</div>
+    </footer>
+
+    <!-- GSAP + ScrollTrigger -->
+    <script src="assets/libs/gsap/gsap.min.js"></script>
+    <script src="assets/libs/gsap/ScrollTrigger.min.js"></script>
+    <script src="assets/js/script.js"></script>
+</body>
+</html>
