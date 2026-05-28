@@ -189,7 +189,7 @@
     <section id="stats" style="
 background:#04050c;
 min-height:auto;
-padding:120px 70px;
+padding:120px 70px 0px 70px;
 position:relative;
 z-index:2;
 ">
@@ -248,8 +248,8 @@ z-index:2;
                     Intelligent outpatient management ecosystem with appointment orchestration,billing workflows,
                     patient lifecycle tracking, and clinical reporting.
                 </div>
-                <div class="pr-tags"><span class="pr-tag">ASP.NET</span><span class="pr-tag">SQL</span><span
-                        class="pr-tag">ERP</span></div>
+                <div class="pr-tags"><span class="pr-tag">PHP</span><span class="pr-tag">SQL</span><span class="pr-tag">Web App</span><span
+                        class="pr-tag">JS</span></div>
             </div>
 
             <div class="project-row">
@@ -259,8 +259,8 @@ z-index:2;
                     Large-scale healthcare camp infrastructure enabling realtime registration,screening workflows,
                     analytics, and operational coordination.
                 </div>
-                <div class="pr-tags"><span class="pr-tag">Web App</span><span class="pr-tag">Realtime</span><span
-                        class="pr-tag">Cloud</span></div>
+                <div class="pr-tags"><span class="pr-tag">Web App</span><span class="pr-tag">ASP.NET MVC</span><span class="pr-tag">Angular</span><span
+                        class="pr-tag">SQL</span></div>
             </div>
 
             <div class="project-row">
@@ -274,6 +274,140 @@ z-index:2;
                         class="pr-tag">API</span></div>
             </div>
         </div>
+    </section>
+
+
+    <!-- =========================
+        DEVELOPERS SECTION
+    ========================= -->
+    <section id="developers" class="developers-section" style="
+    display:grid;
+    grid-template-columns:1.2fr .8fr;
+    gap:80px;
+    align-items:center;
+    ">
+
+        <div class="section-head">
+            <div class="s-tag">Engineering Team</div>
+
+            <h2 class="s-title">
+                SOFTWARE DEVELOPER
+            </h2>
+
+            <p class="dev-section-text">
+                Experienced engineers building scalable enterprise,
+                healthcare, ERP, and realtime management platforms.
+            </p>
+        </div>
+
+        <div class="developers-grid">
+
+            <!-- Developer -->
+            <div class="developer-card">
+
+                <div class="developer-top">
+                    <div class="developer-avatar">
+                        KG
+                    </div>
+
+                    <div>
+                        <h3>Krunal Gajjar</h3>
+                        <span>Full Stack Software Developer</span>
+                    </div>
+                </div>
+
+                <p>
+                    Specialized in ERP architecture, healthcare systems,
+                    realtime operations, API integrations,
+                    and scalable backend engineering.
+                </p>
+
+                <div class="developer-stack">
+                    <span>ASP.NET</span>
+                    <span>Angular</span>
+                    <span>React</span>
+                    <span>SQL</span>
+                    <span>PHP</span>
+                    <span>Firebase</span>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <!-- =========================
+        CLIENTS SECTION
+    ========================= -->
+    <section id="clients" class="clients-section">
+        <div class="section-head">
+            <div class="s-tag">Trusted Clients</div>
+            <h2 class="s-title">
+                COMPANIES &<br>
+                CLIENT PARTNERS
+            </h2>
+            <p class="dev-section-text">
+                Delivering enterprise-grade software solutions
+                for healthcare organizations, startups,
+                and growing businesses.
+            </p>
+        </div>
+
+        <div class="clients-grid">
+
+            <!-- Client -->
+            <div class="client-card">
+
+                <div class="client-icon">
+                    <i class="fa-solid fa-hospital"></i>
+                </div>
+
+                <h3>Akshar Hospital and Diabetes Centre</h3>
+
+                <p>
+                    Hospital OPD management ecosystem
+                    with patient workflow automation,
+                    billing, and analytics.
+                </p>
+
+                <span>Healthcare ERP</span>
+
+            </div>
+
+            <!-- Client -->
+            <div class="client-card">
+
+                <div class="client-icon">
+                    <i class="fa-solid fa-building"></i>
+                </div>
+
+                <h3>Akshar Camp</h3>
+
+                <p>
+                    Comprehensive health camp management platform with realtime registration, screening workflows, and operational coordination.
+                </p>
+
+                <span>Health Camp Management</span>
+
+            </div>
+
+            <!-- Client -->
+            <div class="client-card">
+
+                <div class="client-icon">
+                    <i class="fa-solid fa-heart-pulse"></i>
+                </div>
+
+                <h3>Sam Raza</h3>
+
+                <p>
+                    Dynamic rate management system for diagnostic labs with API integrations, real-time updates, and reporting.
+                </p>
+
+                <span>Diagnostic Lab Management</span>
+
+            </div>
+
+        </div>
+
     </section>
 
     <!-- CONTACT -->
@@ -296,12 +430,12 @@ z-index:2;
             <h3>Send a Message</h3>
             <form id="contactForm">
                 <div class="fg"><label>Name</label><input type="text" id="name" placeholder="Your name" required></div>
-                <div class="fg"><label>Email</label><input type="email" id="email" placeholder="your@email.com" required></div>
-                <div class="fg"><label>Message</label><textarea id="message" placeholder="Tell me about your project..." required></textarea>
+                <div class="fg"><label>Email</label><input type="email" id="email" placeholder="your@email.com"
+                        required></div>
+                <div class="fg"><label>Message</label><textarea id="message" placeholder="Tell me about your project..."
+                        required></textarea>
                 </div>
-                <button type="submit"
-                    class="btn-main"
-                    style="margin-top:8px;border:none;cursor:pointer;">
+                <button type="submit" class="btn-main" style="margin-top:8px;border:none;cursor:pointer;">
                     <span>Send Message</span>
                     <i class="fa-solid fa-paper-plane"></i>
                 </button>
@@ -309,6 +443,7 @@ z-index:2;
             </form>
         </div>
     </section>
+
 
     <!-- FOOTER -->
     <footer>
@@ -322,4 +457,5 @@ z-index:2;
     <script type="module" src="assets/js/firebase.js"></script>
     <script src="assets/js/script.js"></script>
 </body>
+
 </html>
