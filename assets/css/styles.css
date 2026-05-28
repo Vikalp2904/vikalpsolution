@@ -823,13 +823,16 @@ footer p {
 }
 
 .developer-avatar{
-    width:72px;
-    height:72px;
+    width:120px;
+    height:120px;
+
     border-radius:50%;
 
-    display:flex;
-    align-items:center;
-    justify-content:center;
+    overflow:hidden;
+
+    position:relative;
+
+    flex-shrink:0;
 
     background:linear-gradient(
         135deg,
@@ -837,11 +840,41 @@ footer p {
         var(--violet)
     );
 
-    color:#04050c;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
 
-    font-family:'Bebas Neue';
-    font-size:32px;
-    letter-spacing:2px;
+/* image inside circle */
+
+.developer-avatar img{
+    width: 97%;
+    height: 128%;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-top: 38px;
+    display:block;
+}
+
+/* optional glow */
+
+.developer-avatar::after{
+    content:'';
+
+    position:absolute;
+    inset:-8px;
+
+    border-radius:50%;
+
+    background:linear-gradient(
+        135deg,
+        rgba(0,255,231,.35),
+        rgba(155,93,229,.35)
+    );
+
+    filter:blur(20px);
+
+    z-index:-1;
 }
 
 .developer-top h3{
@@ -883,7 +916,35 @@ footer p {
     text-transform:uppercase;
 }
 
+.contact-info{
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+    margin-top:22px;
+}
 
+.contact-info a{
+    display:flex;
+    align-items:center;
+    gap:12px;
+
+    text-decoration:none;
+
+    color:var(--muted);
+
+    font-size:14px;
+
+    transition:.3s;
+}
+
+.contact-info a:hover{
+    color:var(--cyan);
+}
+
+.contact-info i{
+    width:18px;
+    color:var(--cyan);
+}
 /* =====================================================
    CLIENTS SECTION
 ===================================================== */
@@ -995,13 +1056,52 @@ footer p {
 }
 
 
-/* hide on mobile */
-@media(max-width:900px) {
-    #cursorCanvas {
-        display: none;
+/* =========================================================
+   ULL MOBILE RESPONSIVE FIX
+======================================================== */
+/* TABLET */
+@media (max-width:1024px) {
+    section {
+        padding: 90px 30px;
     }
-    body {
-        cursor: auto;
+    nav {
+        padding: 18px 25px;
+    }
+    nav.scrolled {
+        padding: 14px 25px;
+    }
+    .hero-title {
+        font-size: clamp(60px, 10vw, 120px);
+    }
+    .hero-sub {
+        flex-direction: column;
+        gap: 30px;
+    }
+    .hero-sub p {
+        max-width: 100%;
+    }
+    .skills-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .project-row {
+        grid-template-columns: 1fr;
+        gap: 15px;
+        height: auto;
+        padding: 28px;
+    }
+    .pr-tags {
+        justify-content: flex-start;
+        flex-wrap: wrap;
+    }
+    #contact {
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
+    .code-cloud {
+        display: none;
+    } 
+    #developers{
+        display:block;
     }
 }
 /* ─── RESPONSIVE ─── */
@@ -1050,63 +1150,20 @@ footer p {
 
     .clients-grid{
         grid-template-columns:1fr;
-    }
-}
-@media(max-width:600px) {
-    nav ul {
-        display: none;
-    }
-    .hero-title {
-        font-size: 72px;
-    }
-    
+    } 
     #developers{
         display:block;
     }
 }
-/* =========================================================
-   ULL MOBILE RESPONSIVE FIX
-======================================================== */
-/* TABLET */
-@media (max-width: 1024px) {
-    section {
-        padding: 90px 30px;
-    }
-    nav {
-        padding: 18px 25px;
-    }
-    nav.scrolled {
-        padding: 14px 25px;
-    }
-    .hero-title {
-        font-size: clamp(60px, 10vw, 120px);
-    }
-    .hero-sub {
-        flex-direction: column;
-        gap: 30px;
-    }
-    .hero-sub p {
-        max-width: 100%;
-    }
-    .skills-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-    .project-row {
-        grid-template-columns: 1fr;
-        gap: 15px;
-        height: auto;
-        padding: 28px;
-    }
-    .pr-tags {
-        justify-content: flex-start;
-        flex-wrap: wrap;
-    }
-    #contact {
-        grid-template-columns: 1fr;
-        gap: 50px;
-    }
-    .code-cloud {
+@media(max-width:900px) {
+    #cursorCanvas {
         display: none;
+    }
+    body {
+        cursor: auto;
+    }
+    #developers{
+        display:block;
     }
 }
 /* MOBILE */
@@ -1272,6 +1329,18 @@ footer p {
         display:block;
     }
 
+}
+@media(max-width:600px) {
+    nav ul {
+        display: none;
+    }
+    .hero-title {
+        font-size: 72px;
+    }
+    
+    #developers{
+        display:block;
+    }
 }
 /* SMALL MOBILE */
 @media (max-width: 480px) {
