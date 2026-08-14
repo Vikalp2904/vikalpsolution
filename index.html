@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VIKALP — Full Stack Developer</title>
+
+    <meta name="description"
+        content="VIKALP — Full Stack Software Developer building scalable healthcare & enterprise systems: Hospital OPD platforms, Health Camp management, and custom ERP solutions.">
+    <meta name="theme-color" content="#04050c">
+    <meta name="author" content="Krunal Gajjar">
+    <meta name="keywords"
+        content="full stack developer, software developer, hospital management system, OPD software, ERP development, ASP.NET, Angular, React, SQL">
+
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="VIKALP — Full Stack Developer">
+    <meta property="og:description"
+        content="Scalable healthcare & enterprise software — Hospital OPD systems, Health Camp platforms, and custom ERP solutions.">
+    <meta property="og:image" content="assets/images/developer.png">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <link rel="icon"
+        href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%2304050c'/%3E%3Ctext x='50' y='70' font-size='58' font-family='monospace' font-weight='bold' text-anchor='middle' fill='%2300ffe7'%3EV%3C/text%3E%3C/svg%3E">
+
+    <link rel="stylesheet" href="assets/css/fonts.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/all.min.css">
+</head>
+
+<body>
+    <!-- ATMOSPHERE LAYERS -->
+    <div class="grain" aria-hidden="true"></div>
+    <div class="scanlines" aria-hidden="true"></div>
+    <canvas id="cursorCanvas" aria-hidden="true"></canvas>
+    <div class="cursor-dot" id="cursorDot" aria-hidden="true"></div>
+
+    <!-- SVG GRADIENT DEFS (for stat rings) -->
+    <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+        <defs>
+            <linearGradient id="ringGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#00ffe7" />
+                <stop offset="100%" stop-color="#9b5de5" />
+            </linearGradient>
+        </defs>
+    </svg>
+
+    <!-- SCROLL HUD -->
+    <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+
+    <div class="sec-dots" id="secDots" role="navigation" aria-label="Section navigation">
+        <a href="#home" data-label="Home"></a>
+        <a href="#about" data-label="About"></a>
+        <a href="#skills" data-label="Expertise"></a>
+        <a href="#projects" data-label="Work"></a>
+        <a href="#developers" data-label="Developer"></a>
+        <a href="#clients" data-label="Clients"></a>
+        <a href="#contact" data-label="Contact"></a>
+    </div>
+
+    <!-- LOADER -->
+    <div id="loader">
+        <div class="loader-logo" id="loaderLogo">VIKALP</div>
+
+        <div class="boot-log" id="bootLog">
+            <div class="bl"><span><b>&gt;</b> initializing core modules</span><i>OK</i></div>
+            <div class="bl"><span><b>&gt;</b> mounting erp interfaces</span><i>OK</i></div>
+            <div class="bl"><span><b>&gt;</b> establishing secure channel</span><i>OK</i></div>
+            <div class="bl"><span><b>&gt;</b> compiling ui runtime</span><i>OK</i></div>
+            <div class="bl"><span><b>&gt;</b> system ready</span><i>OK</i></div>
+        </div>
+
+        <div class="loader-bar-wrap">
+            <div class="loader-bar" id="loaderBar"></div>
+        </div>
+        <div class="loader-pct" id="loaderPct">0%</div>
+    </div>
+
+    <!-- NAV -->
+    <nav id="nav">
+        <a href="#home" class="logo">
+            <span class="logo-text">VI<span class="hl">K</span>ALP.</span>
+            <em class="logo-status">Available</em>
+        </a>
+
+        <div class="nav-right">
+            <ul id="navLinks">
+                <li><a href="#home" data-i="01">Home</a></li>
+                <li><a href="#about" data-i="02">About</a></li>
+                <li><a href="#skills" data-i="03">Skills</a></li>
+                <li><a href="#projects" data-i="04">Projects</a></li>
+                <li><a href="#contact" data-i="05">Contact</a></li>
+            </ul>
+
+            <button class="cmd-hint" id="cmdHint" type="button" aria-label="Open command palette">
+                <i class="fa-solid fa-terminal"></i> <kbd>Ctrl</kbd><kbd>K</kbd>
+            </button>
+
+            <button class="burger" id="burger" type="button" aria-label="Menu" aria-expanded="false">
+                <i></i><i></i><i></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- MOBILE MENU -->
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="#home"><small>01</small> Home</a>
+        <a href="#about"><small>02</small> About</a>
+        <a href="#skills"><small>03</small> Skills</a>
+        <a href="#projects"><small>04</small> Projects</a>
+        <a href="#developers"><small>05</small> Developer</a>
+        <a href="#contact"><small>06</small> Contact</a>
+
+        <div class="mm-foot">
+            <a href="mailto:noreply.vikalp@gmail.com">noreply.vikalp@gmail.com</a><br>
+            <a href="tel:+917359261780">+91 7359 26 17 80</a>
+        </div>
+    </div>
+
+    <!-- HERO -->
+    <section id="home">
+        <canvas id="grid-floor" aria-hidden="true"></canvas>
+        <canvas id="code-rain" aria-hidden="true"></canvas>
+
+        <div class="hero-left">
+            <div class="hero-eyebrow" id="eyebrow">
+                <div class="hero-line"></div>
+                <span>VIKALP · DRM / HMS / CAMP</span>
+            </div>
+
+            <h1 class="hero-title">
+                <span class="word"><span data-scramble>DATA</span></span>
+                <span class="word gradient-word"><span data-scramble>RESOURCE</span></span>
+                <span class="word"><span data-scramble>MANAGEMENT.</span></span>
+            </h1>
+
+            <div class="hero-sub">
+                <p id="heroP">
+                    We build scalable healthcare &amp; enterprise software solutions including Hospital OPD systems,
+                    Health Camp management platforms, and fully custom dynamic business applications tailored for any
+                    industry.
+                </p>
+
+                <div class="hero-sub-cta" id="heroCta">
+                    <a href="#projects" class="btn-main magnetic"><span>View Work</span> <i
+                            class="fa-solid fa-arrow-right"></i></a>
+                    <a href="#contact" class="btn-ghost magnetic"><span>Contact Me</span></a>
+                </div>
+            </div>
+
+            <div class="hero-meta" id="heroMeta">
+                <div><b>10+</b><small>Enterprise Systems</small></div>
+                <div><b>100K+</b><small>Patient Records</small></div>
+                <div><b>99.9%</b><small>System Stability</small></div>
+            </div>
+        </div>
+
+        <!-- IDE WINDOW -->
+        <div class="hero-right" id="heroRight">
+            <div class="float-chip c1">● build passing</div>
+            <div class="float-chip c2">latency &lt; 40ms</div>
+            <div class="float-chip c3">uptime 99.9%</div>
+
+            <div class="ide" id="ide">
+                <div class="ide-bar">
+                    <div class="ide-dots"><i></i><i></i><i></i></div>
+                    <div class="ide-tabs">
+                        <span class="on">OpdService.cs</span>
+                        <span>camp.module.ts</span>
+                        <span>schema.sql</span>
+                    </div>
+                </div>
+
+                <div class="ide-body">
+                    <div class="ide-gutter" id="ideGutter">1</div>
+                    <div class="ide-code" id="ideCode"></div>
+                </div>
+
+                <div class="ide-foot">
+                    <span class="ok">Connected</span>
+                    <span>ASP.NET · Angular · <b>SQL</b></span>
+                    <span>UTF-8 · LF</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="scroll-hint" id="scrollHint">
+            <div class="scroll-hint-line"></div>
+            <span>Scroll</span>
+        </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- ABOUT -->
+    <section id="about" class="about">
+        <div class="section-head">
+            <div class="s-tag">System Architecture</div>
+            <h2 class="s-title">
+                SOFTWARE ENGINEERED<br>
+                FOR REAL OPERATIONS
+            </h2>
+        </div>
+
+        <div class="about-grid">
+            <div class="about-copy">
+                <p>
+                    We design and engineer enterprise ecosystems that streamline
+                    hospital operations, healthcare workflows, and organizational management.
+
+                    <br><br>
+
+                    Our systems combine scalable backend architecture,
+                    real-time processing, API integrations, intelligent reporting,
+                    and modern UI engineering to deliver production-grade platforms
+                    built for reliability and performance.
+
+                    <br><br>
+
+                    From OPD automation and patient lifecycle management
+                    to ERP infrastructure and custom business software —
+                    every solution is tailored for operational efficiency at scale.
+                </p>
+
+                <div class="about-note">
+                    <b>&gt;</b> architecture: modular · api-first · cloud-ready<br>
+                    <b>&gt;</b> delivery: requirement → deployment → support
+                </div>
+            </div>
+
+            <div class="cap-grid">
+                <div class="cap-card gx">
+                    <i class="fa-solid fa-server"></i>
+                    <h3>Realtime Systems</h3>
+                    <p>live sync · event driven</p>
+                </div>
+
+                <div class="cap-card gx">
+                    <i class="fa-solid fa-database"></i>
+                    <h3>ERP Infrastructure</h3>
+                    <p>modular · multi-tenant</p>
+                </div>
+
+                <div class="cap-card gx">
+                    <i class="fa-solid fa-cloud"></i>
+                    <h3>Cloud Architecture</h3>
+                    <p>scalable · fault tolerant</p>
+                </div>
+
+                <div class="cap-card gx">
+                    <i class="fa-solid fa-shield-halved"></i>
+                    <h3>Secure Platforms</h3>
+                    <p>role based · encrypted</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MARQUEE -->
+    <div class="marquee-wrap">
+        <div class="marquee-track" id="mtrack"></div>
+    </div>
+
+    <!-- SKILLS — BENTO -->
+    <section id="skills">
+        <div class="section-head">
+            <div class="s-tag">Our Expertise</div>
+            <h2 class="s-title">HEALTHCARE &amp;<br> ENTERPRISE SOLUTIONS</h2>
+            <p class="s-sub">
+                Hospital management, OPD systems, health camps, and scalable ERP solutions built for real-world business
+                needs.
+            </p>
+        </div>
+
+        <div class="bento">
+            <div class="bento-card gx wide rv">
+                <div class="bc-top">
+                    <i class="fa-solid fa-hospital"></i>
+                    <span class="bc-idx">01</span>
+                </div>
+                <div>
+                    <h3>Hospital ERP</h3>
+                    <p>patient lifecycle · billing · reporting</p>
+                    <div class="bc-chips">
+                        <span>ASP.NET</span><span>SQL Server</span><span>Angular</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bento-card gx rv">
+                <div class="bc-top">
+                    <i class="fa-solid fa-user-doctor"></i>
+                    <span class="bc-idx">02</span>
+                </div>
+                <div>
+                    <h3>OPD Automation</h3>
+                    <p>appointment orchestration &amp; queue</p>
+                    <div class="bc-bars"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+                </div>
+            </div>
+
+            <div class="bento-card gx rv">
+                <div class="bc-top">
+                    <i class="fa-solid fa-layer-group"></i>
+                    <span class="bc-idx">03</span>
+                </div>
+                <div>
+                    <h3>Multi-Module ERP</h3>
+                    <p>inventory · finance · hr</p>
+                </div>
+            </div>
+
+            <div class="bento-card gx rv">
+                <div class="bc-top">
+                    <i class="fa-solid fa-cloud"></i>
+                    <span class="bc-idx">04</span>
+                </div>
+                <div>
+                    <h3>Cloud Platforms</h3>
+                    <p>deploy · scale · monitor</p>
+                </div>
+            </div>
+
+            <div class="bento-card gx rv">
+                <div class="bc-top">
+                    <i class="fa-solid fa-code"></i>
+                    <span class="bc-idx">05</span>
+                </div>
+                <div>
+                    <h3>Custom Software</h3>
+                    <p>built to your workflow</p>
+                </div>
+            </div>
+
+            <div class="bento-card gx wide rv">
+                <div class="bc-top">
+                    <i class="fa-solid fa-network-wired"></i>
+                    <span class="bc-idx">06</span>
+                </div>
+                <div class="bc-code">GET /api/v2/opd/queue
+<span class="tk-com">→ 200 OK · 38ms · realtime</span></div>
+                <div>
+                    <h3>API Integrations</h3>
+                    <p>rest · soap · webhooks · third-party sync</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- STATS -->
+    <section id="stats">
+        <div class="stats-grid">
+            <div class="stat-card gx rv">
+                <div class="ring">
+                    <svg viewBox="0 0 80 80">
+                        <circle class="track" cx="40" cy="40" r="36" />
+                        <circle class="bar" cx="40" cy="40" r="36" data-pct="80" />
+                    </svg>
+                    <i class="fa-solid fa-cubes"></i>
+                </div>
+                <div>
+                    <div class="stat-val" data-count>10+</div>
+                    <h3>Enterprise Systems</h3>
+                </div>
+            </div>
+
+            <div class="stat-card gx rv">
+                <div class="ring">
+                    <svg viewBox="0 0 80 80">
+                        <circle class="track" cx="40" cy="40" r="36" />
+                        <circle class="bar" cx="40" cy="40" r="36" data-pct="92" />
+                    </svg>
+                    <i class="fa-solid fa-file-medical"></i>
+                </div>
+                <div>
+                    <div class="stat-val" data-count>100K+</div>
+                    <h3>Patient Records</h3>
+                </div>
+            </div>
+
+            <div class="stat-card gx rv">
+                <div class="ring">
+                    <svg viewBox="0 0 80 80">
+                        <circle class="track" cx="40" cy="40" r="36" />
+                        <circle class="bar" cx="40" cy="40" r="36" data-pct="100" />
+                    </svg>
+                    <i class="fa-solid fa-clock"></i>
+                </div>
+                <div>
+                    <div class="stat-val">24/7</div>
+                    <h3>Operational Reliability</h3>
+                </div>
+            </div>
+
+            <div class="stat-card gx rv">
+                <div class="ring">
+                    <svg viewBox="0 0 80 80">
+                        <circle class="track" cx="40" cy="40" r="36" />
+                        <circle class="bar" cx="40" cy="40" r="36" data-pct="99" />
+                    </svg>
+                    <i class="fa-solid fa-heart-pulse"></i>
+                </div>
+                <div>
+                    <div class="stat-val" data-count>99.9%</div>
+                    <h3>System Stability</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- PROJECTS -->
+    <section id="projects">
+        <div class="section-head">
+            <div class="s-tag">Case Studies</div>
+            <h2 class="s-title">
+                ENTERPRISE SYSTEMS<br />
+                IN PRODUCTION
+            </h2>
+            <p class="s-sub">
+                Enterprise-grade applications delivered for healthcare and business automation including OPD, camps, and
+                ERP platforms.
+            </p>
+        </div>
+
+        <div class="projects-container">
+            <div class="project-row gx rv">
+                <div class="pr-num">01</div>
+                <div>
+                    <div class="pr-name">Hospital OPD System</div>
+                    <div class="pr-meta">Live in production</div>
+                </div>
+                <div class="pr-desc">
+                    Intelligent outpatient management ecosystem with appointment orchestration, billing workflows,
+                    patient lifecycle tracking, and clinical reporting.
+                </div>
+                <div class="pr-tags">
+                    <span class="pr-tag">PHP</span><span class="pr-tag">SQL</span>
+                    <span class="pr-tag">Web App</span><span class="pr-tag">JS</span>
+                </div>
+            </div>
+
+            <div class="project-row gx rv">
+                <div class="pr-num">02</div>
+                <div>
+                    <div class="pr-name">Health Camp Management</div>
+                    <div class="pr-meta">Live in production</div>
+                </div>
+                <div class="pr-desc">
+                    Large-scale healthcare camp infrastructure enabling realtime registration, screening workflows,
+                    analytics, and operational coordination.
+                </div>
+                <div class="pr-tags">
+                    <span class="pr-tag">Web App</span><span class="pr-tag">ASP.NET MVC</span>
+                    <span class="pr-tag">Angular</span><span class="pr-tag">SQL</span>
+                </div>
+            </div>
+
+            <div class="project-row gx rv">
+                <div class="pr-num">03</div>
+                <div>
+                    <div class="pr-name">Custom ERP Solutions</div>
+                    <div class="pr-meta">Live in production</div>
+                </div>
+                <div class="pr-desc">
+                    Modular enterprise ERP architecture integrating inventory, finance, HR operations, reporting
+                    systems, and automation pipelines.
+                </div>
+                <div class="pr-tags">
+                    <span class="pr-tag">ERP</span><span class="pr-tag">Angular</span>
+                    <span class="pr-tag">API</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- DEVELOPERS -->
+    <section id="developers" class="developers-section">
+        <div class="section-head">
+            <div class="s-tag">Engineering Team</div>
+            <h2 class="s-title">SOFTWARE DEVELOPER</h2>
+            <p class="dev-section-text">
+                Experienced engineers building scalable enterprise,
+                healthcare, ERP, and realtime management platforms.
+            </p>
+        </div>
+
+        <div class="developers-grid">
+            <div class="developer-card gx rv">
+                <div class="developer-top">
+                    <div class="developer-avatar">
+                        <img src="assets/images/developer.png" alt="Krunal Gajjar" loading="lazy">
+                    </div>
+                    <div>
+                        <h3>Krunal Gajjar</h3>
+                        <span>Full Stack Software Developer</span>
+                    </div>
+                </div>
+
+                <p>
+                    Specialized in ERP architecture, healthcare systems,
+                    realtime operations, API integrations,
+                    and scalable backend engineering.
+                </p>
+
+                <div class="developer-stack">
+                    <span>ASP.NET</span>
+                    <span>Angular</span>
+                    <span>React</span>
+                    <span>SQL</span>
+                    <span>PHP</span>
+                    <span>Firebase</span>
+                </div>
+
+                <div class="contact-info">
+                    <a href="tel:+917359261780">
+                        <i class="fa-solid fa-phone"></i>
+                        +91 7359 26 17 80
+                    </a>
+                    <a href="tel:+917096290401">
+                        <i class="fa-solid fa-phone"></i>
+                        +91 7096 29 04 01
+                    </a>
+                    <a href="mailto:noreply.vikalp@gmail.com">
+                        <i class="fa-solid fa-envelope"></i>
+                        noreply.vikalp@gmail.com
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CLIENTS -->
+    <section id="clients" class="clients-section">
+        <div class="section-head">
+            <div class="s-tag">Trusted Clients</div>
+            <h2 class="s-title">
+                COMPANIES &amp;<br>
+                CLIENT PARTNERS
+            </h2>
+            <p class="dev-section-text">
+                Delivering enterprise-grade software solutions
+                for healthcare organizations, startups,
+                and growing businesses.
+            </p>
+        </div>
+
+        <div class="clients-grid">
+            <div class="client-card gx rv">
+                <div class="client-icon"><i class="fa-solid fa-hospital"></i></div>
+                <h3>Akshar Hospital and Diabetes Centre</h3>
+                <p>
+                    Hospital OPD management ecosystem
+                    with patient workflow automation,
+                    billing, and analytics.
+                </p>
+                <span>Healthcare ERP</span>
+            </div>
+
+            <div class="client-card gx rv">
+                <div class="client-icon"><i class="fa-solid fa-building"></i></div>
+                <h3>Akshar Camp</h3>
+                <p>
+                    Comprehensive health camp management platform with realtime registration, screening workflows, and
+                    operational coordination.
+                </p>
+                <span>Health Camp Management</span>
+            </div>
+
+            <div class="client-card gx rv">
+                <div class="client-icon"><i class="fa-solid fa-heart-pulse"></i></div>
+                <h3>Sam Raza</h3>
+                <p>
+                    Dynamic rate management system for diagnostic labs with API integrations, real-time updates, and
+                    reporting.
+                </p>
+                <span>Diagnostic Lab Management</span>
+            </div>
+        </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- CONTACT -->
+    <section id="contact">
+        <div class="contact-left">
+            <div class="s-tag">Get In Touch</div>
+            <h2>LET'S<br>BUILD<br><em>YOUR SYSTEM</em></h2>
+            <p>
+                We deliver end-to-end software solutions for hospitals, clinics, health camps, and businesses. From
+                requirement to deployment — fully custom development.
+            </p>
+            <div class="contact-socials">
+                <a href="mailto:noreply.vikalp@gmail.com" class="cs-link magnetic" aria-label="Email"><i
+                        class="fa-solid fa-envelope"></i></a>
+                <a href="tel:+917359261780" class="cs-link magnetic" aria-label="Phone"><i
+                        class="fa-solid fa-phone"></i></a>
+                <a href="https://wa.me/917359261780" target="_blank" rel="noopener" class="cs-link magnetic"
+                    aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+                <a href="https://www.linkedin.com/" target="_blank" rel="noopener" class="cs-link magnetic"
+                    aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="https://github.com/" target="_blank" rel="noopener" class="cs-link magnetic"
+                    aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+            </div>
+        </div>
+
+        <div class="contact-form gx">
+            <h3>Send a Message</h3>
+            <div class="cf-sub">// response within 24 hours</div>
+
+            <form id="contactForm">
+                <div class="fg">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" placeholder="Your name" required>
+                </div>
+                <div class="fg">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" placeholder="your@email.com" required>
+                </div>
+                <div class="fg">
+                    <label for="message">Message</label>
+                    <textarea id="message" placeholder="Tell me about your project..." required></textarea>
+                </div>
+                <button type="submit" class="btn-main magnetic" style="border:none;">
+                    <span>Send Message</span>
+                    <i class="fa-solid fa-paper-plane"></i>
+                </button>
+                <div id="status"></div>
+            </form>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>© 2026 VIKALP — Built with passion &amp; precision.</p>
+        <div class="footer-logo">VI<span>K</span>ALP.</div>
+    </footer>
+
+    <!-- COMMAND PALETTE -->
+    <div class="palette" id="palette" role="dialog" aria-modal="true" aria-label="Command palette">
+        <div class="palette-box">
+            <div class="palette-input">
+                <i class="fa-solid fa-terminal"></i>
+                <input type="text" id="paletteInput" placeholder="Type a command or search…" autocomplete="off">
+            </div>
+            <div class="palette-list" id="paletteList"></div>
+            <div class="palette-foot">
+                <span><kbd>↑↓</kbd>navigate</span>
+                <span><kbd>↵</kbd>select</span>
+                <span><kbd>esc</kbd>close</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- GSAP + ScrollTrigger -->
+    <script src="assets/libs/gsap/gsap.min.js"></script>
+    <script src="assets/libs/gsap/ScrollTrigger.min.js"></script>
+    <script type="module" src="assets/js/firebase.js"></script>
+    <script src="assets/js/script.js"></script>
+</body>
+
+</html>
