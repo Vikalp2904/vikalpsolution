@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="dark">
+<title>Page not found | vikalpsolution.co.in</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#04050c; --bg-2:#07080f; --bg-3:#090b16;
+  --cyan:#00ffe7; --violet:#9b5de5; --vibrant-blue:#256ff7; --pink:#f72585;
+  --text:#dde4f0; --muted:#9497bd;
+  --surface:rgba(255,255,255,0.03); --surface-2:rgba(255,255,255,0.05);
+  --border:rgba(255,255,255,0.06); --border-hi:rgba(0,255,231,0.28);
+  --mono:'Cascadia Code','JetBrains Mono',Consolas,'SF Mono',ui-monospace,monospace;
+  --pad-x:70px;
+  --ease-out:cubic-bezier(.16,1,.3,1); --ease-io:cubic-bezier(.77,0,.175,1);
+  color-scheme:dark;
+  box-sizing:border-box; padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+html{scroll-padding-top:env(safe-area-inset-top,0px);height:100%;background:var(--bg)}
+*{box-sizing:border-box}
+body{margin:0;min-height:100%;display:flex;flex-direction:column;color:var(--text);font-family:Inter,system-ui,-apple-system,"Segoe UI",Arial,sans-serif;-webkit-font-smoothing:antialiased;
+  background:
+    radial-gradient(900px 420px at 50% 38%,rgba(155,93,229,.14),transparent 70%),
+    radial-gradient(600px 300px at 78% 20%,rgba(37,111,247,.10),transparent 70%),
+    linear-gradient(180deg,var(--bg) 0%,var(--bg-2) 55%,var(--bg-3) 100%);
+  background-color:var(--bg)}
+a{color:inherit}
+a:focus-visible{outline:2px solid var(--cyan);outline-offset:3px;border-radius:8px}
+
+header{border-bottom:1px solid var(--border);background:rgba(4,5,12,.6);backdrop-filter:blur(10px)}
+.bar{max-width:1400px;margin:0 auto;padding:16px var(--pad-x);display:flex;align-items:center;justify-content:space-between;gap:24px}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none;font-weight:700;font-size:19px;letter-spacing:-.3px}
+.logo i{width:30px;height:30px;border-radius:8px;background:linear-gradient(135deg,var(--cyan),var(--violet));color:var(--bg);display:grid;place-items:center;font-style:normal;font-size:16px;font-weight:700}
+nav{display:flex;gap:32px}
+nav a{text-decoration:none;color:var(--muted);font-weight:500;font-size:15px;transition:color .25s var(--ease-out)}
+nav a:hover{color:var(--cyan)}
+.right{display:flex;align-items:center;gap:12px}
+.signin{text-decoration:none;font-weight:500;font-size:15px;color:var(--muted);padding:8px 10px;transition:color .25s var(--ease-out)}
+.signin:hover{color:var(--text)}
+.cta{background:linear-gradient(135deg,var(--cyan),var(--vibrant-blue));color:var(--bg);text-decoration:none;font-weight:600;font-size:14px;padding:10px 18px;border-radius:8px;transition:box-shadow .3s var(--ease-out),transform .3s var(--ease-out)}
+.cta:hover{box-shadow:0 0 24px rgba(0,255,231,.35);transform:translateY(-1px)}
+
+main{flex:1;display:flex;align-items:center;justify-content:center;padding:64px 24px}
+.wrap{max-width:860px;width:100%;text-align:center;animation:rise .9s var(--ease-out) both}
+@keyframes rise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+.code{font-family:var(--mono);font-size:14px;font-weight:600;color:var(--cyan);margin:0 0 16px}
+h1{font-size:clamp(38px,6.5vw,64px);line-height:1.05;letter-spacing:-1.5px;font-weight:700;margin:0 0 18px;color:var(--text)}
+.lead{max-width:560px;margin:0 auto 16px;font-size:18px;line-height:1.6;color:var(--muted)}
+.addr{display:inline-block;margin:6px 0 52px;padding:9px 16px;border:1px solid var(--border-hi);background:var(--surface);border-radius:8px;font-family:var(--mono);font-size:14px;color:var(--cyan);word-break:break-all}
+
+.actions{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;text-align:left}
+.card{display:flex;flex-direction:column;gap:6px;padding:22px;border:1px solid var(--border);border-radius:12px;text-decoration:none;background:var(--surface);transition:border-color .3s var(--ease-out),background .3s var(--ease-out),transform .3s var(--ease-out),box-shadow .3s var(--ease-out)}
+.card:hover{border-color:var(--border-hi);background:var(--surface-2);transform:translateY(-3px);box-shadow:0 10px 30px rgba(0,255,231,.07)}
+.card.primary{border-color:var(--border-hi);background:linear-gradient(135deg,rgba(0,255,231,.10),rgba(155,93,229,.14))}
+.card.primary:hover{box-shadow:0 10px 34px rgba(155,93,229,.25)}
+.card b{font-size:16px;font-weight:600;color:var(--text)}
+.card span{font-size:14px;line-height:1.55;color:var(--muted)}
+
+footer{border-top:1px solid var(--border);padding:20px var(--pad-x);text-align:center;font-size:13px;color:var(--muted)}
+footer::before{content:"";display:block;width:56px;height:2px;margin:0 auto 14px;border-radius:2px;background:linear-gradient(90deg,var(--cyan),var(--violet),var(--pink))}
+
+@media (max-width:900px){
+  :root{--pad-x:22px}
+  nav{display:none}
+  .actions{grid-template-columns:1fr}
+  main{padding:44px 20px}
+}
+@media (prefers-reduced-motion:reduce){
+  .wrap{animation:none}
+  *{transition:none!important}
+}
+</style>
+</head>
+<body>
+    <header>
+        <div class="bar">
+            <a class="logo" href="https://vikalpsolution.co.in/"><i>V</i>Vikalp Solution</a>
+            <div class="right">
+                <a class="cta" href="https://vikalpsolution.co.in/">Try it free</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="wrap">
+            <p class="code">Error 404</p>
+            <h1>Page not found</h1>
+            <p class="lead">We couldn’t find the address you entered. It may have been removed, expired, or typed incorrectly.</p>
+            <div class="addr">crm9999.vikalpsolution.co.in</div>
+
+            <!--<div class="actions">
+                <a class="card primary" href="https://vikalpsolution.co.in/">
+                    <b>Discover Vikalp Solution</b>
+                    <span>Not sure how you got here? Start from our home page.</span>
+                </a>
+                <a class="card" href="https://vikalpsolution.co.in/">
+                    <b>Get help</b>
+                    <span>Contact us to recover an expired database.</span>
+                </a>
+            </div>-->
+        </div>
+    </main>
+  
+
+<script>
+(function () {
+    var params = new URLSearchParams(window.location.search);
+    var hosting = params.get("hosting");
+    var addr = document.querySelector(".addr");
+
+    // hosting parameter missing ya empty hai to 404 page show karo
+    if (!hosting || !hosting.trim()) {
+        if (addr) {
+            addr.textContent = window.location.hostname;
+        }
+        return;
+    }
+
+    // Hosting value ke saath domain show karo
+    if (addr) {
+        addr.textContent = hosting.trim() + ".vikalpsolution.co.in";
+    }
+})();
+</script>
+
+
+    <footer>© 2026 Vikalp Solution. All rights reserved.</footer>
+</body>
+</html>
